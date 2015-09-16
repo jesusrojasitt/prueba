@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+		<title>dinamico</title>
+		<meta charset="utf-8">
+		<script src="jquery-2.1.4.js"></script>
+	</head>
+
+	<body>
+		<div id="algo">asdasd</div>
+		<script>
+			function funcion()
+			{
+				$("#algo").html("asdasdcvbcb");
+				document.title += 'simon';
+				
+				var c;
+				
+				for(c=0; c<=5; c++)
+				{
+					$("#algo").append("<br>algo for");
+				}
+				
+				c=0;
+				
+				while(c<=5)
+				{
+					if(c%2==0)
+					{
+						$("#algo").prepend("algo par while<br>");
+					}
+					c++;
+				}
+				
+				c=0;
+				
+				do
+				{
+				    if(c%2!=0)
+					{
+						$("#algo").append("<br>algo impar do-while");
+					}
+					c++;
+				}while(c<=5)
+				
+				var arreglo = new Array();
+				
+				arreglo.push(5);
+				arreglo.push("Adios mundo");
+				
+				var i;
+				
+				for(i in arreglo)
+				{
+					$('#algo').append("<br>"+arreglo[i]);
+				}
+				
+				var arreglo2=[1,2,3,"holii"];
+				
+				for(i in arreglo2)
+				{
+					$('#algo').append("<br>"+arreglo2[i]);
+				}
+				
+				$('#algo').prepend(arreglo2.length);
+				
+				$('#algo').append(arreglo.length);
+				
+				var arreglo3=[[1,2,3],['a','b','c']];
+				
+				for(i in arreglo3[0])
+				{
+					$('#algo').append('<br>'+arreglo3[0][i]);
+				}
+				
+				for(i in arreglo3[1])
+				{
+					$('#algo').prepend(arreglo3[1][i]+'<br>');
+				}
+				
+				var abecedario = arreglo3[1].join('-');
+				
+				$("#algo").append('<br>'+abecedario);
+				
+				var arreglo4 = abecedario.split('-');
+				
+				for(i in arreglo4)
+				{
+					$('#algo').append("<br>"+arreglo4[i]);
+				}
+				
+				var objetoGato = new ClaseGato("awebis");
+			
+				function ClaseGato(nombre)
+				{	
+					this.algodonDeAzucar=nombre;
+					
+					this.metodoAnonimo=function()
+					{
+						//pontucodigoaquiasd
+					};
+				}
+			
+				$('#algo').prepend(objetoGato.algodonDeAzucar+'<br>');
+			
+			}
+			
+			
+			funcion();
+		</script>
+	</body>
+</html>
